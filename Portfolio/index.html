@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zawish Noor - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <nav>
+      <h1 class="logo">Zawish.</h1>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Hi, I'm <span>Zawish Noor</span></h1>
+        <h2>UX Designer & Robotics Enthusiast</h2>
+        <p>Turning ideas into user-friendly interfaces and smart machines.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn primary">Hire Me</a>
+          <a href="#contact" class="btn outline">Let's Talk</a>
+        </div>
+      </div>
+      <div class="hero-image"></div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <p>I’m a Computer Science student at Pak Austria Fachhochschule specializing in UX design, robotics, and software development. I combine creativity with logic to build interfaces and smart systems that solve real-world problems.</p>
+    </section>
+
+    <section id="services" class="services">
+      <h2>Services</h2>
+      <ul>
+        <li>UX/UI Design (Wireframes, Prototypes)</li>
+        <li>Frontend Web Development (HTML, CSS)</li>
+        <li>Graphic Design (Flyers, Social Media)</li>
+        <li>Database Applications (C#, SQL)</li>
+        <li>Robotics and Automation Projects</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>My Projects</h2>
+      <p class="subtitle">A selection of my work in design, robotics, and development.</p>
+      <div class="card-grid">
+
+        <div class="project-card" onclick="openModal(
+          'General Store Management System',
+          `A comprehensive database application using C# and SQL Server for managing a general store. Features include:<br>
+          - Splash Screen<br>
+          - Login Page for Admin and Employees<br>
+          - Product Inventory Management<br>
+          - Employee Records<br>
+          - Sales and Purchase Tracking<br>
+          - Billing Module<br>
+          This system provides an all-in-one solution for daily store operations.`
+        )">
+          <img src="General Store management.png" alt="General Store System" />
+          <h3>General Store System</h3>
+          <p>Inventory & billing system using C# and SQL.</p>
+          <span class="tag">C#</span>
+        </div>
+
+        <div class="project-card" onclick="openModal(
+      'Line Following Car',
+      `An autonomous robotic car built using Arduino that follows a black line path using IR sensors.<br><br>
+      <strong>Components Used:</strong><br>
+      - Arduino Uno<br>
+      - IR Sensor Module x2<br>
+      - L298N Motor Driver<br>
+      - DC Gear Motors & Wheels<br>
+      - Chassis & Caster Wheel<br>
+      - Battery Pack<br><br>
+
+      <strong>Assembly & Wiring:</strong><br>
+      - Attach motors and sensors to the chassis<br>
+      - IR sensors detect black/white contrast<br>
+      - Motor driver controls wheels based on sensor signals<br><br>
+
+      <strong>Working Logic:</strong><br>
+      - IR sensors send HIGH or LOW signals<br>
+      - If both sensors detect black: move forward<br>
+      - If one sensor detects white: turn in the opposite direction<br><br>
+
+      <strong>Arduino Code Logic:</strong><br>
+      Read IR sensor inputs and control motor pins using digitalWrite to steer left, right, or forward based on line position.<br><br>
+
+      <strong>Skills:</strong> Arduino · Embedded Systems · IR Sensors · C++`
+    )">
+      <img src="Gestured Control.jpg" alt="Line Following Car" />
+      <h3>Line Following Car</h3>
+      <p>Follows black line path using IR sensors and Arduino logic.</p>
+      <span class="tag">Arduino</span>
+    </div>
+
+        <div class="project-card" onclick="openModal(
+          'Contact Management System',
+          `Developed using C++, this DOS-style Contact Management System allows users to efficiently manage personal or business contacts. Key features include:<br>
+          - Add, edit, and delete contacts<br>
+          - Search functionality<br>
+          - DOS-based user interface for intuitive experience<br>
+          This project highlights skills in structured programming and file handling in C++.<br><br>
+          <strong>Skills:</strong> C++, File Handling`
+        )">
+          <img src="contact-management.jpg" alt="Contact Management" />
+          <h3>Contact Management System</h3>
+          <p>Console-based contact storage and retrieval in C++.</p>
+          <span class="tag">C++</span>
+        </div>
+
+        <div class="project-card" onclick="openModal(
+          'Online Cab Booking System',
+          `Engineered in C++, this system allows users to register, book rides, and calculate fares seamlessly. Key features include:<br>
+          - User Registration & Login<br>
+          - Real-time booking simulation<br>
+          - Distance-based fare calculation<br>
+          The system demonstrates practical implementation of object-oriented programming.<br><br>
+          <strong>Skills:</strong> C++, OOP`
+        )">
+          <img src="taxi-booking.jpg" alt="Cab Booking" />
+          <h3>Online Cab Booking</h3>
+          <p>Console-based booking system with fare logic in C++.</p>
+          <span class="tag">C++</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+      <p>Let’s build something impactful together. Drop a message below.</p>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Zawish Noor. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
